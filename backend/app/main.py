@@ -10,9 +10,12 @@ app = FastAPI(title="Finance Tracker API", version="2.0")
 
 import os
 
-origins = ["http://localhost:5173"]
-frontend_url = os.getenv("FRONTEND_URL")
-if frontend_url:
+frontend_url = os.getenv("FRONTEND_URL", "")
+origins = [
+    "http://localhost:5173",
+    "https://finance-tracker-susp.vercel.app",
+]
+if frontend_url and frontend_url not in origins:
     origins.append(frontend_url)
 
 app.add_middleware(
