@@ -13,7 +13,7 @@ import os
 frontend_url = os.getenv("FRONTEND_URL", "")
 origins = [
     "http://localhost:5173",
-    "https://finance-tracker-susp.vercel.app",
+    "https://www.gidergelirim.com",
 ]
 if frontend_url and frontend_url not in origins:
     origins.append(frontend_url)
